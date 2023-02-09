@@ -50,20 +50,20 @@ const MotionItem = motion(Grid);
 
 const AnimatedCards = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <MotionContainer
-        {...containerAnimation}
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {Array.from(Array(36)).map((_, index: number) => (
-          <MotionItem {...itemAnimation} item xs={2} sm={2} md={4} key={index}>
-            <Item>{index + 1}</Item>
-          </MotionItem>
-        ))}
-      </MotionContainer>
-    </Box>
+    // <Box sx={{ flexGrow: 1 }}>
+    <MotionContainer
+      {...containerAnimation}
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+    >
+      {Array.from(Array(36)).map((_, index: number) => (
+        <MotionItem {...itemAnimation} item xs={2} sm={2} md={4} key={index}>
+          <Item>{index + 1}</Item>
+        </MotionItem>
+      ))}
+    </MotionContainer>
+    // </Box>
   );
 };
 
