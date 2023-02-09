@@ -1,7 +1,7 @@
 ## Projet
 
 Animate material ui cards with Framer Motion.
-[Lien codesandbox](https://codesandbox.io/s/github/tiavina-mika/animate-cards)
+[Lien codesandbox](https://codesandbox.io/s/github/tiavina-mika/mui-framer-motion-cards-animation)
 
 ## A propos de moi
 
