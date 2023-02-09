@@ -19,12 +19,8 @@ const containerAnimation = {
     }
   },
   transition: {
-    type: "spring",
-    stiffness: 100,
-    damping: 10,
-    bounce: 0.25,
-    mass: 0.5,
-    ease: "easeInOut",
+    type: "tween",
+    ease: "anticipate",
     duration: 0.6
   }
 };
