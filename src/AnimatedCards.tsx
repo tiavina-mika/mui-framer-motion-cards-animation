@@ -1,5 +1,4 @@
 import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { motion } from "framer-motion";
@@ -14,14 +13,18 @@ const containerAnimation = {
       scale: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.2,
+        staggerChildren: 0.5,
         delay: 0.2
       }
     }
   },
   transition: {
-    type: "tween",
-    ease: "anticipate",
+    type: "spring",
+    stiffness: 100,
+    damping: 10,
+    bounce: 0.25,
+    mass: 0.5,
+    ease: "easeInOut",
     duration: 0.6
   }
 };
