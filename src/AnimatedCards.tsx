@@ -45,24 +45,24 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-const AnimatedCards = () => {
-  const GridContainer = motion(Grid);
-  const GridItem = motion(Grid);
+const MotionContainer = motion(Grid);
+const MotionItem = motion(Grid);
 
+const AnimatedCards = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <GridContainer
+      <MotionContainer
         {...containerAnimation}
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {Array.from(Array(36)).map((_, index: number) => (
-          <GridItem {...itemAnimation} item xs={2} sm={2} md={4} key={index}>
+          <MotionItem {...itemAnimation} item xs={2} sm={2} md={4} key={index}>
             <Item>{index + 1}</Item>
-          </GridItem>
+          </MotionItem>
         ))}
-      </GridContainer>
+      </MotionContainer>
     </Box>
   );
 };
