@@ -1,21 +1,11 @@
-import * as React from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
-export const itemAnimation = {
-  variants: {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  }
-};
-
-export const containerAnimation = {
+// parent animation
+const containerAnimation = {
   initial: "hidden",
   animate: "visible",
   variants: {
@@ -24,7 +14,7 @@ export const containerAnimation = {
       scale: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
         delay: 0.2
       }
     }
@@ -32,7 +22,18 @@ export const containerAnimation = {
   transition: {
     type: "tween",
     ease: "anticipate",
-    duration: 0.2
+    duration: 0.6
+  }
+};
+
+// each children animation
+const itemAnimation = {
+  variants: {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
   }
 };
 
@@ -44,7 +45,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-export default function ResponsiveGrid() {
+const AnimatedCards = () => {
   const GridContainer = motion(Grid);
   const GridItem = motion(Grid);
 
@@ -56,12 +57,14 @@ export default function ResponsiveGrid() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {Array.from(Array(6)).map((_, index) => (
-          <GridItem {...itemAnimation} item xs={2} sm={4} md={4} key={index}>
-            <Item>xs=2</Item>
+        {Array.from(Array(36)).map((_, index: number) => (
+          <GridItem {...itemAnimation} item xs={2} sm={2} md={4} key={index}>
+            <Item>{index + 1}</Item>
           </GridItem>
         ))}
       </GridContainer>
     </Box>
   );
-}
+};
+
+export default AnimatedCards;
