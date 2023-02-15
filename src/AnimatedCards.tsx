@@ -13,15 +13,13 @@ const containerAnimation = {
       scale: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.2,
-        delay: 0.2
+        staggerChildren: 0.2
       }
     }
   },
   transition: {
     type: "tween",
-    ease: "anticipate",
-    duration: 0.6
+    ease: "anticipate"
   }
 };
 
@@ -35,11 +33,11 @@ const itemAnimation = {
     }
   },
   transition: {
-    type: 'spring',
-    bounce: 0,
-    ease: [0.17, 0.55, 0.55, 1],
-    duration: 1.2,
-  },
+    type: "spring",
+    bounce: 0.5,
+    ease: "easeIn",
+    duration: 1.2
+  }
 };
 
 const Item = styled(Paper)(({ theme }) => ({
