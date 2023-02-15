@@ -13,7 +13,7 @@ const containerAnimation = {
       scale: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.5,
+        staggerChildren: 0.2,
         delay: 0.2
       }
     }
@@ -33,7 +33,13 @@ const itemAnimation = {
       y: 0,
       opacity: 1
     }
-  }
+  },
+  transition: {
+    type: 'spring',
+    bounce: 0,
+    ease: [0.17, 0.55, 0.55, 1],
+    duration: 1.2,
+  },
 };
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -49,7 +55,6 @@ const MotionItem = motion(Grid);
 
 const AnimatedCards = () => {
   return (
-    // <Box sx={{ flexGrow: 1 }}>
     <MotionContainer
       {...containerAnimation}
       container
@@ -62,7 +67,6 @@ const AnimatedCards = () => {
         </MotionItem>
       ))}
     </MotionContainer>
-    // </Box>
   );
 };
 
